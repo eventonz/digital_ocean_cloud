@@ -38,7 +38,7 @@
 	</h1>
 
 	<ul>
-		<p>This is the default CFML script that comes with the <a href="https://github.com/isapir/lucee-docker" target="_blank">lucee-docker</a> project.
+		<p>This is the Toods  script that comes with the <a href="https://github.com/isapir/lucee-docker" target="_blank">lucee-docker</a> project.
 			You can see the source code of the script in the project's directory at
 			<a href="https://github.com/isapir/lucee-docker/blob/master/app/webroot/index.cfm" target="_blank"><span class="path host-path">app/webroot/index.cfm</span></a>,
 			and it is copied into the container at <span class="path cont-path">#getCurrentTemplatePath()#</span>.</p>
@@ -63,21 +63,6 @@
 		</table>
 
 		<p>To run your own code, you can do one of the following:</p>
-
-		<li>
-			<p>Map a local directory of the host machine when launching the container.  This is very useful during development as changes to your code will be immediately reflected in the running application:</p>
-			<ul>
-				<li>Use the <code>-v</code> argument to mount the host's directory to the container's <span class="path cont-path">/srv/www/app/webroot</span>, e.g. if your application code is on the host at <span class="path host-path">C:\www</span>, you would use the following argument when you execute <code>docker run</code>:
-
-					<br>
-					<code class="snippet">-v <span class="path host-path">C:\www</span>:<span class="path cont-path">/srv/www/app/webroot</span></code></li>
-				</li>
-				<li>Make sure that the Docker has permission to access the directory</li>
-
-				<p>Tip: If you need to add/override the Tomcat configurations, you can map a local directory of the host machine to the container at <span class="path cont-path">/srv/www/catalina-base</span> and include in it the Catalina Base files per the Tomcat documentation.
-				</p>
-			</ul>
-		</li>
 
 		<li>
 			<p>Package your application code with the Docker image at build time.  This is the recommended option for production use:</p>
