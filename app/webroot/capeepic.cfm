@@ -16,7 +16,7 @@ TODO
 // if statement for the two events running off this server 
 
 
-ss_eventid = 8;
+ss_eventid = 1;
 ss_raceid = 17538;
 fourcol = 'catplace';
 stage = 'Prologue';
@@ -30,39 +30,24 @@ todayssplits = [
 			},
 			
 			{
-				"id" = 8,
-				"name" = "18KM "
-
-			},
-			{
-				"id" = 11,
-				"name" = "21KM "
-
-			},
-			
-			{
-				"id" = 12,
-				"name" = "29KM "
-
-			},
-			{
 				"id" = 3,
-				"name" = "33KM "
+				"name" = "6.5KM "
 
 			},
 			{
 				"id" = 4,
-				"name" = "45KM "
+				"name" = "10KM "
+
+			},
+			
+			{
+				"id" = 8,
+				"name" = "16KM "
 
 			},
 			{
-				"id" = 13,
-				"name" = "52KM "
-
-			},
-			{
-				"id" = 14,
-				"name" = "58KM "
+				"id" = 9,
+				"name" = "22KM "
 
 			},
 
@@ -73,7 +58,6 @@ todayssplits = [
 			}
 
 ];
-}
 
 </cfscript>
 
@@ -293,6 +277,8 @@ Summary box at the top
 <cfloop array="#todayssplits#" index="i">
 
 
+
+
 <!--- check that we have a match id on splits results --->
 	 <cfscript>
 
@@ -368,10 +354,25 @@ Summary box at the top
 <cfelse>
 <!--- do an error here ---> 
 
+<cfloop array="#todayssplits#" index="i">
+	<cfscript>
+	 arrayappend(splits.entries,
+					{
+					"data": [
+						"#i.name#",
+						"",
+						"",
+						""
+					]
+				} );
+	</cfscript>
 
 
 
-
+</cfloop>
+<cfscript>
+arrayappend(results.items,splits);
+	</cfscript>
 
 
 </cfif>
