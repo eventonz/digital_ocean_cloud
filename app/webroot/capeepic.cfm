@@ -16,11 +16,6 @@ TODO
 // if statement for the two events running off this server 
 
 
-
-if ( r_id eq 60 )
-	// Cape Epic Splits 
-{
-
 ss_eventid = 8;
 ss_raceid = 17538;
 fourcol = 'catplace';
