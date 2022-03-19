@@ -352,7 +352,29 @@ Summary box at the top
 
 
 <cfelse>
-<!--- do an error here ---> 
+
+<cfset arrayappend(splits.entries,
+	{
+			"style": "split_grey",
+			"data": [
+				"STATUS : Awaiting Start"
+			]
+		}
+
+		)>
+<cfset arrayappend(splits.entries,
+			{
+					"style": "header",
+					"data": [
+						"Point",
+						"Race Time",
+						"Time",
+						"Place"
+					]
+				}
+
+				)>
+
 
 <cfloop array="#todayssplits#" index="i">
 	<cfscript>
